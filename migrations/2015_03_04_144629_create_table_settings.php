@@ -17,7 +17,7 @@ class CreateTableSettings extends Migration {
 			$table->increments('id');
 			$table->string('key', 128)->unique();
 			$table->string('label', 128);
-			$table->text('value');
+			$table->text('value')->nullable();
 			$table->string('type', 32)->default('textbox');
 			$table->boolean('isRoot')->default('0');
 			$table->integer('position')->nullable()->unsigned();
