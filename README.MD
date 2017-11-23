@@ -26,6 +26,12 @@ protected $fillable = [
 	'role_id'
 ];
 ```
+
+Go to public/vendor/cms folder and run
+```bash
+bower install
+```
+
 Optional
 --------
 Generate admin user via console
