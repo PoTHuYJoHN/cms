@@ -4,10 +4,6 @@ Get started
 ```bash
 composer require webkid/cms
 ```
-Add service provider to config/app.php
-```bash
-Webkid\Cms\CmsServiceProvider::class
-```
 
 Implement `Webkid\Cms\Models\Roleable` trait to User model
 
