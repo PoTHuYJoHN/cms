@@ -1,0 +1,7 @@
+<div class="form-group form-textarea">
+	<label ng-if="label" for="{{:: name }}">{{ ::label }} {{ required != null ? "*" : "" }}:</label>
+	<div>
+		<textarea class="form-control" ng-model="model" name="{{:: name }}" id="{{:: name }}"></textarea>
+		<div ng-include src="'/vendor/cms/app/directives/form/errors.html'"></div>
+	</div>
+</div>

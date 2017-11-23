@@ -1,0 +1,21 @@
+<table class="table table-hover">
+	<tr>
+		<th>Name</th>
+		<th>Actions</th>
+		<th>Email</th>
+		<th>Role</th>
+		<th>Remove</th>
+	</tr>
+	<tr ng-repeat="item in items">
+		<td>{{ item.name }}</td>
+		<td>
+			<a class="btn btn-primary" ui-sref="users.edit({id:item.id})"><i class="fa fa-pencil-square-o"></i> edit</a>
+			<a class="btn btn-primary" ui-sref="users.changePassword({id:item.id})"><i class="fa fa-unlock-alt"></i> change password</a>
+		</td>
+		<td>{{ item.email }}</td>
+		<td>{{ showRole(item.role_id) }}</td>
+		<td><a class="btn btn-danger btn-cons" ng-really-message="Are you sure?" ng-really-click="removeItem(item)">
+			<i class="fa fa-trash"></i> <span class="bold">Remove</span></a>
+		</td>
+	</tr>
+</table>

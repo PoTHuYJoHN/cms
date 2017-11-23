@@ -1,0 +1,6 @@
+<div class="form-group form-select">
+	<label ng-if="label" for="{{:: name }}">{{:: label }} {{ required != null ? "*" : "" }}:</label>
+	<select ng-model="model" ng-disabled="disabled" name="{{:: name }}" id="{{:: name }}"
+	         ng-options="item.key as item.value for item in options"></select>
+	<div ng-include src="'/vendor/cms/app/directives/form/errors.html'"></div>
+</div>

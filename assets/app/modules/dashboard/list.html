@@ -1,0 +1,23 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-24">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<div class="panel-title">
+						{{ stateData.title }}
+					</div>
+					<div class="panel-controls">
+						<button ng-if="stateData.urlAdd" class="btn btn-primary" type="button" ui-sref="{{ stateData.urlAdd }}"><i class="fa fa-plus-square"></i> Add new item</button>
+					</div>
+				</div>
+				<div class="panel-body p-t-20">
+					<form ng-submit="changeItem();" name="form" novalidate>
+						<div ui-view="form"></div>
+						<div ui-view="form_create"></div>
+					</form>
+					<div ui-view="listItems"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

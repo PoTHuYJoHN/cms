@@ -1,0 +1,13 @@
+{
+    "name": "webkid/cms",
+    "description": "Easy to use and light weight cms based on Laravel 5.5",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ivan Kolodiy",
+            "email": "pothuyjohn@gmail.com"
+        }
+    ],
+    "require": {}
+}

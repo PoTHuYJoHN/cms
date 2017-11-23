@@ -1,0 +1,46 @@
+{
+  "name": "laravelcms",
+  "version": "1.1.1",
+  "authors": [
+    "ivankolodiy <pothuyjohn@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "bootstrap-sass": "~3.3.4"
+  },
+  "dependencies": {
+    "angular": "~1.4.*",
+    "angular-animate": "~1.3.15",
+    "angular-deferred-bootstrap": "~0.1.7",
+    "angular-file-upload": "~1.1.*",
+    "angular-loading-bar": "~0.7.*",
+    "angular-local-storage": "~0.1.*",
+    "angular-perfect-scrollbar": "~0.0.4",
+    "angular-sanitize": "~1.3.15",
+    "angular-ui-notification": "~0.0.14",
+    "angular-ui-router": "~0.2.*",
+    "bootstrap": "~3.3.4",
+    "fastclick": "~1.*",
+    "font-awesome": "~4.3.0",
+    "ngDialog": "~0.4.0",
+    "perfect-scrollbar": "0.5.9",
+    "underscore": "~1.8.3",
+    "video.js": "~4.12.5",
+    "angular-slick": "~0.2.1",
+    "modernizr": "2.8.3",
+    "photoswipe": "~4.1.0",
+    "angular-notification": "~1.1.1",
+    "angular-summernote": "~0.5.1",
+    "angular-bootstrap-datepicker": "~0.3.1",
+    "angular-bootstrap": "~1.3.3",
+    "moment": "~2.14.1",
+    "angular-moment": "~0.10.3"
+  }
+}

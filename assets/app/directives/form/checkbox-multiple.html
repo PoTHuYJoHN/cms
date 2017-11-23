@@ -1,0 +1,10 @@
+<div class="checkbox check-primary">
+	<div class="u-posRelative" ng-repeat="item in options">
+		<input name="{{:: name+item.key }}" id="{{:: name+item.key }}" type="checkbox" value="{{::item.key}}"
+			   ng-checked="model.indexOf(item.key) > -1"
+			   ng-click="toggleSelection(item.key)"
+			   ng-disabled="item.key == disabled || modeldisabled"/>
+		<label for="{{:: name+item.key }}" title="{{ ::item.value }}" ng-bind="::item.value"></label>
+	</div>
+	<div class="m-b-20" ng-include src="'/vendor/cms/app/directives/form/errors.html'"></div>
+</div>

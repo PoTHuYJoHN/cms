@@ -1,0 +1,60 @@
+<fieldset>
+
+	<div class="row">
+		<div class="col-xs-24 col-sm-8">
+			<custom-input
+					model="item.name"
+					name="name"
+					required="true"
+					maxLength="32"
+					title="Name"
+					label="Name"></custom-input>
+		</div>
+		<div class="col-xs-24 col-sm-8">
+			<custom-input
+					model="item.email"
+					name="email"
+					required="true"
+					maxLength="32"
+					title="E-mail"
+					label="E-mail"></custom-input>
+		</div>
+		<div class="col-xs-24 col-sm-8">
+			<custom-select
+					model="item.role_id"
+					name="role_id"
+					required="true"
+					options="roles"
+					label="Role"
+					title="Role"></custom-select>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-xs-24 col-sm-12">
+			<custom-input
+					model="item.password"
+					name="password"
+					required="true"
+					maxLength="32"
+					type="password"
+					title="Password"
+					label="Password"></custom-input>
+		</div>
+		<div class="col-xs-24 col-sm-12">
+			<custom-input
+					model="item.password_confirmation"
+					name="password_confirmation"
+					required="true"
+					maxLength="32"
+					type="password"
+					title="Confirm Password"
+					label="Confirm Password"></custom-input>
+		</div>
+	</div>
+
+</fieldset>
+
+<div class="u-textRight">
+	<button type="submit" class="btn btn-complete">Create</button>
+</div>

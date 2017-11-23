@@ -1,0 +1,42 @@
+<div class="m-attachment--files panel panel-default">
+	<div class="panel-heading">
+		<div class="panel-title">
+			{{:: label }}
+		</div>
+
+		<div class="upload">
+			<input name="{{:: name }}" id="{{:: name }}" type="file" multiple uploader="uploader" nv-file-select />
+			<label class="m-btn btn-link btn-xs" for="{{:: name }}">{{:: 'general.upload_file' | trans}}</label>
+		</div>
+	</div>
+	<div class="panel-body padding-20" ng-if="files.length || uploader.queue.length">
+		<div class="m-attachment__list" ng-file-over="other-over-zone">
+
+			<ul ng-class="{'no-files' : !files.length && !uploader.queue.length}" class="list-items">
+
+				<li ng-if="file.token" ng-repeat="file in files" class="list-item--file">
+					<div class="file-name icon-fo icon-fo-{{:: file.ext }}">
+						<a ng-click="downloadFile(file)" >{{:: file.name }}</a>
+					</div>
+					<i class="icon-fo-delete remove" ng-click="removeFile($index);"></i>
+				</li>
+
+				<!-- File queue -->
+				<li class="list-item--file" ng-repeat="item in uploader.queue">
+					<div class="file-name icon-fo icon-fo-pr"></div>
+					<div class="progress-bar">
+						<span class="progress" ng-style="{ 'width': item.progress + '%' }"></span>
+					</div>
+					<i class="icon-fo-delete remove" ng-click="item.remove();"></i>
+				</li>
+
+			</ul>
+		</div>
+	</div>
+
+	<div class="panel-body no-padding" ng-if="!files.length && !uploader.queue.length">
+		<div class="m-placeholder--gallery">
+			<!--<img imageonload src="/images/stubs/placeholder/640_img_file.jpg" />-->
+		</div>
+	</div>
+</div>

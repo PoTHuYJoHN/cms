@@ -1,0 +1,14 @@
+<div class="row">
+	<div class="checkbox check-primary checkbox-circle col-xs-24 col-sm-{{ column }}" ng-repeat="option in options">
+		<div class="u-posRelative" ng-repeat="item in option">
+			<input id="{{:: name + '-' + item.key }}"
+				   name="{{:: name }}"
+				   type="radio"
+				   ng-model="$parent.$parent.model"
+				   ng-disabled="((_.isArray(disabled)) ? (_.indexOf(disabled, item.key) >= 0 ? true : false) : item.key == disabled)"
+				   value="{{:: item.key }}"/>
+			<label for="{{:: name + '-' + item.key }}">{{:: item.value }}</label>
+		</div>
+	</div>
+	<div class="m-b-20" ng-include src="'/vendor/cms/app/directives/form/errors.html'"></div>
+</div>

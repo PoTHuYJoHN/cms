@@ -1,0 +1,119 @@
+<nav class="page-sidebar" data-pages="sidebar">
+
+	<div class="sidebar-header">
+		<img src="/vendor/cms/images/dashboard/logo.png" alt="logo" title="logo" class="m-r-30" />
+		<div class="sidebar-header-controls">
+			<button type="button" class="btn btn-link visible-lg-inline" data-toggle-pin="sidebar">
+				<i class="fa fs-12"></i>
+			</button>
+		</div>
+	</div>
+
+	<perfect-scrollbar class="sidebar-menu scrollbar m-t-30" wheel-propagation="false" wheel-speed="10">
+		<ul class="menu-items">
+			<!-- Settings -->
+			<li role="presentation" class="" ng-class="{ active: state.includes('settings.*') || state.current.name == 'settings'}">
+				<a ui-sref="settings.list">
+					<span class="title">Settings</span>
+				</a>
+				<span class="icon-thumbnail">SE</span>
+			</li>
+			<!-- End settings -->
+
+			<!-- Home page -->
+			<li class="">
+				<a href="javascript:;">
+					<span class="title">Home</span>
+					<span class="arrow"></span>
+				</a>
+				<span class="icon-thumbnail">
+					<i class="fa fa-home"></i>
+				</span>
+				<ul class="sub-menu" style="display: none;">
+					<!-- Home content -->
+					<li role="presentation" class="" ng-class="{ active: state.includes('pages.*') && state.params.token == 'home'}">
+						<a ui-sref="pages.edit({token:'home',section:null})">
+							<span class="title">Home content</span>
+						</a>
+						<span class="icon-thumbnail">
+							HC
+						</span>
+					</li>
+					<!-- End Home content -->
+					<!-- Home slider -->
+					<li role="presentation" class=""
+						ng-class="{ active: state.current.name == 'pages.list' && state.params.token == 'home' && state.params.section == 'home_slider'}">
+						<a ui-sref="pages.list({token:'home',section:'home_slider'})">
+							<span class="title">Home slider</span>
+						</a>
+						<span class="icon-thumbnail">HS</span>
+					</li>
+					<!-- End home slider -->
+				</ul>
+			</li>
+			<!-- End home page -->
+
+			<!--<li role="presentation" class="" ng-class="{ active: state.includes('pages.*') && state.params.token == 'about'}">-->
+				<!--<a ui-sref="pages.edit({token:'about',section:null})">-->
+					<!--<span class="title">About</span>-->
+				<!--</a>-->
+				<!--<span class="icon-thumbnail">AB</span>-->
+			<!--</li>-->
+
+			<!--<li role="presentation" class=""-->
+				<!--ng-class="{ active: state.current.name == 'pages.list' && state.params.token == 'about' && state.params.section == 'about_team'}">-->
+				<!--<a ui-sref="pages.list({token:'about',section:'about_team'})">-->
+					<!--<span class="title">Team Members</span>-->
+				<!--</a>-->
+				<!--<span class="icon-thumbnail">TM</span>-->
+			<!--</li>-->
+
+			<!--<li role="presentation" class="" ng-class="{ active: state.includes('pages.*') && state.params.token == 'technology'}">-->
+				<!--<a ui-sref="pages.edit({token:'technology',section:null})">-->
+					<!--<span class="title">Technology</span>-->
+				<!--</a>-->
+				<!--<span class="icon-thumbnail">TE</span>-->
+			<!--</li>-->
+
+			<!--<li role="presentation" class=""-->
+			    <!--ng-class="{ active: state.current.name == 'pages.list' && state.params.token == 'technology' && state.params.section == 'technology_faq'}">-->
+				<!--<a ui-sref="pages.list({token:'technology',section:'technology_faq'})">-->
+					<!--<span class="title">FAQ</span>-->
+				<!--</a>-->
+				<!--<span class="icon-thumbnail">FQ</span>-->
+			<!--</li>-->
+
+			<!--<li role="presentation" class="" ng-class="{ active: state.includes('pages.*') && state.params.token == 'content'}">-->
+				<!--<a ui-sref="pages.edit({token:'content',section:null})">-->
+					<!--<span class="title">Content</span>-->
+				<!--</a>-->
+				<!--<span class="icon-thumbnail">CO</span>-->
+			<!--</li>-->
+
+			<!--<li role="presentation" class="" ng-class="{ active: state.includes('pages.*') && state.params.token == 'contact'}">-->
+				<!--<a ui-sref="pages.edit({token:'contact',section:null})">-->
+					<!--<span class="title">Contact</span>-->
+				<!--</a>-->
+				<!--<span class="icon-thumbnail">CT</span>-->
+			<!--</li>-->
+
+			<!-- Subscribers -->
+			<li role="presentation" class="" ng-class="{ active: state.includes('subscribers.*') || state.current.name == 'subscribers'}">
+				<a ui-sref="subscribers.list">
+					<span class="title">Subscribers</span>
+				</a>
+				<span class="icon-thumbnail">SB</span>
+			</li>
+			<!-- End Subscribers -->
+
+			<!-- Users -->
+			<li role="presentation" class="" ng-class="{ active: state.includes('users.*') || state.current.name == 'users'}">
+				<a ui-sref="users.list">
+					<span class="title">Users</span>
+				</a>
+				<span class="icon-thumbnail">US</span>
+			</li>
+			<!-- End Users -->
+		</ul>
+	</perfect-scrollbar>
+</nav>

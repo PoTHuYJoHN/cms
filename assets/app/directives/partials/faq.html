@@ -1,0 +1,20 @@
+<div class="faq-list m-b-30">
+	<dl ng-repeat="faq in items" ng-class="{show: activeTab == _.findWhere(items, {id: faq.id}).id}">
+		<dt ng-click="togglerTab(_.findWhere(items, {id: faq.id}).id)">
+			<span class="faq-title" ng-bind-html="faq.fields.question"></span>
+			<i class="fa fa-circle"></i>
+		</dt>
+		<dd>
+			<div class="faq-description">
+				<div class="faq-icon">
+					<i class="fa fa-question"></i>
+					<i class="fa fa-caret-down"></i>
+				</div>
+
+				<span ng-bind-html="faq.fields.answer"></span>
+			</div>
+		</dd>
+	</dl>
+
+
+</div>

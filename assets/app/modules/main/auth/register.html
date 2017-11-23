@@ -1,0 +1,93 @@
+<div class="page-wrap">
+	<div class="container">
+		<div class="row">
+			<h1 class="title text-center mt2p mb5p">Create your <span>profile</span></h1>
+			<div class="col-md-24">
+				<form class="form-horizontal" ng-submit="register(user)">
+					<fieldset>
+						<div class="col-md-12">
+							<custom-input
+									model="user.name"
+									name="name"
+									required="true"
+									maxLength="32"
+									title="Name"
+									label="Name"></custom-input>
+
+							<custom-input
+									model="user.email"
+									name="email"
+									required="true"
+									maxLength="32"
+									title="E-Mail Address"
+									label="E-Mail Address"></custom-input>
+
+							<custom-input
+									model="user.password"
+									name="password"
+									required="true"
+									type="password"
+									title="Password"
+									label="Password"></custom-input>
+
+
+							<custom-input
+									model="user.password_confirmation"
+									name="password_confirmation"
+									required="true"
+									type="password"
+									title="Confirm password"
+									label="Confirm password"></custom-input>
+
+							<div class="form-group">
+								<button type="submit" class="button inline blue w100p">
+									Sign up
+								</button>
+							</div>
+						</div>
+
+						<!--<div class="col-md-2">-->
+							<!--<div class="form__center&#45;&#45;innner regist">-->
+								<!--<i class="icon-carleaseright-open-mini circle"></i>-->
+							<!--</div>-->
+						<!--</div>-->
+
+						<!--<div class="col-md-10">-->
+							<!--<div class="form-group">-->
+								<!--<label>-->
+									<!--Sign up with: Facebook-->
+								<!--</label>-->
+								<!--<a href="/login/facebook" class="socials soc-login facebook" target="_self">-->
+									<!--<span>Facebook</span><i class="icon-carleasefacebook"></i>-->
+								<!--</a>-->
+							<!--</div>-->
+
+							<!--<div class="form-group" style="margin-bottom: 50px;">-->
+								<!--<label>-->
+									<!--Sign up with: Google +-->
+								<!--</label>-->
+								<!--<a href="/login/google" class="socials soc-login google" target="_self">-->
+									<!--<span>Google</span><i class="icon-carleasegplus"></i>-->
+								<!--</a>-->
+							<!--</div>-->
+							<!--<div class="form-group">-->
+								<!--<label>-->
+									<!--Already have an account-->
+								<!--</label>-->
+							<!--</div>-->
+							<!--<div class="form-group">-->
+								<!--<a href="/auth/login" class="button inline invertgray w100p">-->
+									<!--<span>Sign in</span>-->
+								<!--</a>-->
+							<!--</div>-->
+						<!--</div>-->
+					</fieldset>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+

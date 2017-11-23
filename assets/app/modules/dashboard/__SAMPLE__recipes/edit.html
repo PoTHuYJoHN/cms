@@ -1,0 +1,79 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-8">
+			<div>
+				<widget-avatar
+						file-token="item.coverToken"
+						file-type="3"
+						label="Cover photo"
+						file-size="preview"></widget-avatar>
+			</div>
+
+			<div>
+				<widget-attachments
+						file-type="4"
+						parent-id="item.id"
+						files="item.gallery"
+						name="gallery"
+						isgallery="true"
+						label="Gallery"
+						></widget-attachments>
+			</div>
+		</div>
+
+		<div class="col-md-16">
+
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<div class="panel-title">
+						Recipe information
+					</div>
+				</div>
+
+				<div class="panel-body p-t-20">
+					<form name="form" novalidate ng-submit="save();">
+
+						<!--ERRORS-->
+						<div ng-if="form_error_title" class="form-error-title">
+							{{ ::form_error_title }}
+						</div>
+
+						<fieldset>
+							<div class="row">
+								<custom-input
+										model="item.title"
+										name="title"
+										autofocus
+										title="{{:: 'recipes.form.title.title' | trans}}"
+										label="{{:: 'recipes.form.title.label' | trans}}"></custom-input>
+							</div>
+
+							<div class="row">
+								<custom-textarea
+										model="item.text"
+										name="text"
+										maxLength="5000"
+										rows="6"
+										cols="60"
+										title="{{:: 'recipes.form.text.title' | trans}}"
+										label="{{:: 'recipes.form.text.label' | trans}}"></custom-textarea>
+							</div>
+
+						</fieldset>
+
+					</form>
+
+					<div class="u-textRight">
+						<button type="button" class="btn btn-success" ng-click="save()">Save</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+

@@ -1,0 +1,7 @@
+<div class="checkbox check-primary checkbox-circle">
+		<div class="u-posRelative" ng-repeat="item in options">
+			<input id="{{ name + '-' + item.key }}" name="{{ name }}" type="radio" ng-model="$parent.model" value="{{ item.key }}"/>
+			<label for="{{ name + '-' + item.key }}">{{ item.value }}</label>
+		</div>
+		<div ng-include src="'/vendor/cms/app/directives/form/errors.html'"></div>
+</div>

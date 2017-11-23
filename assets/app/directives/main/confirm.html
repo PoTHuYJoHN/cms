@@ -1,0 +1,26 @@
+<style>
+	.ngdialog-content {
+		padding: 20px 0px 0px 0px!important;
+	}
+
+	.custom-confirm .button[type="submit"], .custom-confirm button.button {
+		height: 50px;
+		font-size: 16px;
+	}
+
+	p.ngDialogData-title {
+		margin-bottom: 40px;
+	}
+</style>
+<div class="custom-confirm dialog-contents" style="text-align: center">
+	<img imageonload ng-src="/images/dashboard/info-cloud-1.png" />
+	<div style="padding: 0 20px;">
+		<p ng-if="!ngDialogData.title" class="ngDialogData-title">Are you sure you want to do this?</p>
+		<p ng-if="ngDialogData.title" ng-bind="ngDialogData.title"></p>
+	</div>
+
+	<div class="display-flexbox">
+		<button class="button" ng-click="closeThisDialog()" style="width: 50%; border: 0px solid; border-radius: 0px;">Cancel</button>
+		<button class="button green" ng-click="confirm()" style="width: 50%; border-radius: 0px;">Confirm</button>
+	</div>
+</div>

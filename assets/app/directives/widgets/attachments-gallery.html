@@ -1,0 +1,47 @@
+<div class="m-attachment--gallery panel panel-default">
+	<div class="panel-heading">
+		<div class="panel-title">
+			{{:: label }}
+		</div>
+
+		<div class="btn-group-btn" style="top: 6px;">
+			<div class="btn-group">
+				<div class="upload">
+					<input name="{{:: name }}" id="{{:: name }}" type="file" multiple uploader="uploader" nv-file-select />
+					<label for="{{:: name }}" class="btn btn-success">
+						<i class="fa fa-cloud-upload"></i>
+					</label>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<div class="panel-body no-padding" ng-if="files.length || uploader.queue.length">
+		<div class="m-attachment__list" ng-file-over="other-over-zone">
+			<ul class="list-items row" ng-class="{'no-files' : !files.length && !uploader.queue.length}">
+
+				<li ng-if="file.token" class="list-item--gallery col-xs-8" ng-repeat="file in files">
+					<img imageonload id="img_one" ng-click="::openPhotoSwipe($index, files)" style="cursor: pointer;" ng-src="{{:: file.token | getAvaUrl:file.type }}"/>
+					<div class="fo-delete">
+						<i class="icon-fo fa fa-trash-o" ng-click="removeFile($index);"></i>
+					</div>
+				</li>
+
+				<!-- File queue -->
+				<li ng-if="uploader.queue.length" class="list-item--gallery col-xs-8" ng-repeat="item in uploader.queue">
+					<div class="progress-bar">
+						<i class="icon-fo fa fa-spinner"></i>
+					</div>
+					<div ng-thumb="{ file: item._file, width: 240, height: 240 }"></div>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="panel-body no-padding" ng-if="!files.length && !uploader.queue.length">
+		<div class="m-placeholder--gallery">
+			<img class="img-responsive" imageonload src="/images/stubs/home_slider/preview.jpg" />
+		</div>
+	</div>
+</div>

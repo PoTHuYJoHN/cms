@@ -1,0 +1,55 @@
+<!--SEARCH-->
+<div class="row" ng-if="list[0].total">
+	<div class="col-md-10">
+		<input
+				placeholder="Search by email"
+				class="form-control"
+				type="text"
+				ng-model="$parent.search"
+				ng-model-options="{ debounce: 1000 }"
+				ng-change="doSearch()">
+	</div>
+	<div class="col-md-offset-2 col-md-12">
+		<p><strong>TOTAL:</strong>{{list[0].total}}</p>
+	</div>
+</div>
+<!--END SEARCH-->
+<!--SUBSCRIBERS LIST-->
+<div class="row">
+	<div class="col-xs-24 col-sm-24 m-b-20">
+		<table class="table table-hover" ng-if="list[0].total">
+			<tr>
+				<th>Email</th>
+				<th>Date</th>
+				<th>Actions</th>
+			</tr>
+			<tr ng-repeat="item in list">
+				<td>{{ item.email }}</td>
+				<td>{{ item.created_at.date | momentDate }}</td>
+				<td><a class="btn btn-danger btn-cons" ng-really-message="Are you sure?" ng-really-click="removeItem(item)">
+					<i class="fa fa-trash"></i> <span class="bold">Remove</span></a>
+				</td>
+			</tr>
+		</table>
+		<div ng-if="!list[0].total">
+			<i>no subscribers</i>
+		</div>
+	</div>
+</div>
+<!--SUBSCRIBERS LIST END-->
+<!--PAGINATION-->
+<div class="row" ng-if="list[0].total">
+	<div class="col-md-24">
+		<uib-pagination
+				boundary-link-numbers="true"
+				force-ellipses="true"
+				ng-change="changePage()"
+				total-items="pagination.total"
+				ng-model="pagination.current_page"
+				items-per-page="pagination.per_page"
+				class="pagination-sm"
+				max-size="5"
+				boundary-links="true"></uib-pagination>
+	</div>
+</div>
+<!--PAGINATION END-->

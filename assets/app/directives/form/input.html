@@ -1,0 +1,7 @@
+<div class="form-group">
+		<label ng-if="label.length" for="{{:: name }}">{{ ::label }} {{ required ? "*" : "" }}:</label>
+		<input class="form-control" type="text" ng-model="model" name="{{:: name }}" id="{{:: name }}"
+		       placeholder="{{:: placeholder }}"
+			 ng-disabled="disabled"/>
+		<div ng-include src="'/vendor/cms/app/directives/form/errors.html'"></div>
+</div>

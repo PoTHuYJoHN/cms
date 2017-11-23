@@ -1,0 +1,75 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-8">
+			<div ng-if="editCover">
+				<widget-avatar
+						file-token="item.coverToken"
+						file-type="{{coverFileType}}"
+						label="Cover photo"
+						file-size="preview"></widget-avatar>
+			</div>
+
+			<div ng-if="editGallery">
+				<widget-attachments
+						file-type="{{galleryFileType}}"
+						parent-id="item.id"
+						files="item.files"
+						name="files"
+						isgallery="true"
+						label="Gallery"
+						></widget-attachments>
+			</div>
+		</div>
+
+		<div ng-class="(editCover || editGallery) ? 'col-md-16' : 'col-md-24'">
+
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<div class="panel-title">
+						Edit form
+					</div>
+				</div>
+
+				<div class="panel-body p-t-20">
+					<form name="form" novalidate>
+						<div ng-include="'/vendor/cms/app/modules/dashboard/pages/shared-form.html'" ng-init="lang = 'en'" class="form-outer"></div>
+					</form>
+
+					<div class="u-textRight">
+						<button type="button" class="btn btn-success" ng-click="saveAll()">Save all</button>
+					</div>
+				</div>
+			</div>
+
+			<!--<div class="panel panel-default">-->
+				<!--<div class="panel-body p-t-20">-->
+					<!--<div class="tabbable tabs-left" ng-if="fields">-->
+						<!--<ul class="nav nav-tabs">-->
+							<!--<li ng-repeat="lang in langs" ng-class="{ 'active' : lang == activeLang }"><a ng-click="showLangForm(lang)">{{:: lang | languageFullByShort }}</a></li>-->
+						<!--</ul>-->
+
+						<!--<div class="tab-content">-->
+							<!--<div ng-repeat="lang in langs" class="tab-pane" ng-class="{ 'active' : lang == activeLang }">-->
+								<!--<div class="column-seperation">-->
+									<!--<form name="form">-->
+										<!--<div ng-include="'/vendor/cms/app/modules/dashboard/pages/shared-form.html'" ng-init="lang = lang" class="form-outer"></div>-->
+									<!--</form>-->
+								<!--</div>-->
+							<!--</div>-->
+							 <!-- -->
+							<!--<div class="u-textRight">-->
+								<!--<button type="button" class="btn btn-success" ng-click="saveAll()">Save all</button>-->
+							<!--</div>-->
+						<!--</div>-->
+					<!--</div>-->
+				<!--</div>-->
+			<!--</div>-->
+		</div>
+	</div>
+</div>
+
+
+
+
+
+

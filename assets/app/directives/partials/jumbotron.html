@@ -1,0 +1,15 @@
+<div class="jumbotron" data-pages="parallax">
+	<div class="container-fluid container-fixed-lg sm-p-l-20 sm-p-r-20">
+		<div class="inner">
+
+			<ul class="breadcrumb" ng-if="breadcrumbs.length">
+				<li ng-repeat="crumb in breadcrumbs">
+					<a ng-if="crumb.params" ng-href="{{crumb.crumb_href}}">{{crumb.label }}</a>
+					<a ng-if="crumb.state && !crumb.params" ui-sref="{{crumb.state}}">{{crumb.label }}</a>
+					<span ng-if="!crumb.state" class="active">{{crumb.label }}</span>
+				</li>
+			</ul>
+
+		</div>
+	</div>
+</div>

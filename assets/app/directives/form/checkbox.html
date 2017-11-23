@@ -1,0 +1,7 @@
+<div class="checkbox check-primary">
+	<div class="u-posRelative">
+		<input name="{{:: name }}" id="{{:: name }}" type="checkbox" ng-model="model" ng-checked="model == 1" />
+		<label ng-if="label" for="{{:: name }}" title="{{ ::title }}" ng-bind="::label"></label>
+	</div>
+	<div ng-include src="'/vendor/cms/app/directives/form/errors.html'"></div>
+</div>

@@ -1,0 +1,25 @@
+<form role="form" ng-submit="saveAllItems(items);" name="forms.formAdd">
+	<fieldset>
+		<div ng-repeat="item in items">
+			<div ng-if="item.type == 'textbox'">
+				<custom-input
+						model="item.value"
+						name="{{ item.key }}"
+						title="{{ item.label }}"
+						label="{{ item.label }}"></custom-input>
+			</div>
+
+			<div ng-if="item.type == 'textarea'">
+				<custom-textarea
+						model="item.value"
+						name="{{ item.key }}"
+						title="{{ item.label }}"
+						label="{{ item.label }}"></custom-textarea>
+			</div>
+		</div>
+	</fieldset>
+
+	<div class="u-textRight">
+		<button type="submit" class="btn btn-complete btn-cons">Save</button>
+	</div>
+</form>
