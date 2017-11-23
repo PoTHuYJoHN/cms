@@ -2,7 +2,7 @@ Get started
 -----------
 
 ```bash
-composer require ...
+composer require webkid/cms
 ```
 
 Implement `Webkid\Cms\Models\Roleable` trait to User model
