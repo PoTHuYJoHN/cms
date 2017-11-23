@@ -9,5 +9,12 @@
             "email": "pothuyjohn@gmail.com"
         }
     ],
-    "require": {}
+    "require": {},
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Webkid\\Cms\\CmsServiceProvider"
+            ]
+        }
+    }
 }
