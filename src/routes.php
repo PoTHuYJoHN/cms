@@ -44,7 +44,6 @@ Route::group([
 	'prefix' => 'api/common',
 	'middleware' => ['web']
 ], function () {
-	Route::get('files/getAllInfoForUploader', 'Api\Common\FilesController@getAllInfoForUploader');
 	Route::resource('files', \Webkid\Cms\Controllers\Api\FilesController::class);
 	Route::delete('files/forceDelete/{token}', 'Webkid\Cms\Controllers\Api\FilesController@forceDelete');
 });
