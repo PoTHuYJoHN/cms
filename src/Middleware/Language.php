@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Middleware;
+namespace Webkid\Cms\Middleware;
 
 use App;
 use Closure;

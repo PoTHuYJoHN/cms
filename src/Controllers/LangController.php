@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Webkid\Cms\Controllers;
 
 use Cookie;
+use Webkid\Cms\Controller;
 
 /**
  * Class LangController
