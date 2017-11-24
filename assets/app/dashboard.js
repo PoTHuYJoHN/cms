@@ -64,9 +64,8 @@
 			$rootScope.breadCrumbs = BreadCrumbsService.getCrumbs();
 		});
 
-		if(BACKEND_CFG.langs.length) {
-			$rootScope.langs = BACKEND_CFG.langs;
-		}
+		$rootScope.langs = BACKEND_CFG.langs;
+
 		//Functions for SEO
 		$rootScope.getSeoTitle = SeoService.getTitle;
 

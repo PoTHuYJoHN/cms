@@ -88,6 +88,10 @@
 					return 'spanish';break;
 				case 'fr' :
 					return 'french';break;
+				case 'ua' :
+					return 'ukrainian';break;
+				case 'ru' :
+					return 'russian';break;
 				default :
 					return 'english';
 			}

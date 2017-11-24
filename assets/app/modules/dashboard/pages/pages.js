@@ -130,7 +130,6 @@
 			BreadCrumbsService.addCrumb(edit ? 'Editing item' : 'Add item');
 		}
 
-
 		$scope.fields = MultiLangHelper.prepareFieldsForLang(config.fields, edit, edit ? item.data.fields : false);
 
 		$scope.editAvatar = false;
@@ -152,10 +151,12 @@
 		$scope.editMode = true;
 
 		//TABS
-		$scope.activeLang = 'en';
+		$scope.activeLang = $scope.$root.langs[0];
 		$scope.showLangForm = function (lang) {
 			$scope.activeLang = lang;
 		};
+
+		$scope.multiLang = $scope.$root.langs.length > 1;
 
 		//SAVE PERSISTENT
 		$scope.saveAll = function() {
@@ -166,7 +167,6 @@
 					} else {
 						$state.reload();
 					}
-
 				});
 
 			} else {
