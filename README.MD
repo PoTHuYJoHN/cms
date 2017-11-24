@@ -39,6 +39,30 @@ Generate admin user via console
 php artisan cms:admin:create
 ```
 
+To use multi lang add Language middleware to web group
+```php
+'web' => [
+        ...
+	\Webkid\Cms\Middleware\Language::class
+],
+```
+Add exception cookie `lang` to `App\Http\Middleware\EncryptCookies\`
+```php
+protected $except = [
+    'lang'
+];
+```
+
+Add language switcher to your website.
+Be sure that languages are in your `config/langs.php`
+```html
+<ul>
+	<li><a href="/setLang/ua">ua</a></li>
+	<li><a href="/setLang/ru">ru</a></li>
+	<li><a href="/setLang/en">en</a></li>
+</ul>
+```
+
 
 Example of controller
 -------
