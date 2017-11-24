@@ -90,7 +90,7 @@ Route::group([
 
 /*
 |--------------------------------------------------------------------------
-| OTHER SPECIAL ROUTES
+| Promo site routes
 |--------------------------------------------------------------------------
 */
-//Route::get('download/{token}', 'FilesController@download');
+Route::get('setLang/{lang}', 'Webkid\Cms\Controllers\LangController@setLang');
