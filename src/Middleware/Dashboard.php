@@ -32,12 +32,8 @@ class Dashboard {
 	 */
 	public function handle($request, Closure $next)
 	{
-		if (!$this->auth->check()) {
-			return redirect('/login');
-		}
-
-		if(! $this->auth->user()->isAdmin()) {
-			return redirect('/auth/login');
+		if (!$this->auth->check() || !$this->auth->user()->isAdmin()) {
+			return redirect(route('login'));
 		}
 
 		return $next($request);

@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-	<meta charset="utf-8" />
+	<meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
+	<meta charset="utf-8"/>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-	<meta content="" name="description" />
-	<meta content="" name="author" />
-	<meta name="csrf-token" content="{{ csrf_token() }}" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+	<meta content="" name="description"/>
+	<meta content="" name="author"/>
+	<meta name="csrf-token" content="{{ csrf_token() }}"/>
 	<title ng-bind="getSeoTitle()">Dashboard</title>
 
 
@@ -66,8 +66,10 @@
 	<link rel="stylesheet" href="/vendor/cms/bower_components/ngDialog/css/ngDialog.min.css">
 	<link rel="stylesheet" href="/vendor/cms/bower_components/ngDialog/css/ngDialog-theme-default.min.css">
 	<link rel="stylesheet" href="/vendor/cms/bower_components/angular-loading-bar/build/loading-bar.min.css">
-	<link rel="stylesheet" href="/vendor/cms/bower_components/angular-ui-notification/dist/angular-ui-notification.min.css">
-	<link rel="stylesheet" href="/vendor/cms/bower_components/angular-bootstrap-datepicker/dist/angular-bootstrap-datepicker.css">
+	<link rel="stylesheet"
+		  href="/vendor/cms/bower_components/angular-ui-notification/dist/angular-ui-notification.min.css">
+	<link rel="stylesheet"
+		  href="/vendor/cms/bower_components/angular-bootstrap-datepicker/dist/angular-bootstrap-datepicker.css">
 	<link rel="stylesheet" href="/vendor/cms/bower_components/summernote/dist/summernote.css">
 	<link rel="stylesheet" href="/vendor/cms/css/dashboard.css">
 	<!-- endinject-->
@@ -87,7 +89,6 @@
 </head>
 
 
-
 <body class="fixed-header ">
 
 <nav-bar></nav-bar>
@@ -97,7 +98,7 @@
 	<div class="header ">
 		<div class="pull-left full-height visible-sm visible-xs">
 			<div class="sm-action-bar">
-				<a  class="btn-link toggle-sidebar" data-toggle="sidebar">
+				<a class="btn-link toggle-sidebar" data-toggle="sidebar">
 					<span class="icon-set menu-hambuger"></span>
 				</a>
 			</div>
@@ -107,7 +108,8 @@
 			<div class="m-t-10">
 
 				<div class="dropdown pull-right">
-					<button class="profile-dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<button class="profile-dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true"
+							aria-expanded="false">
 						<div class="pull-left p-r-10 p-t-10 fs-16 font-heading">
 							<span class="semi-bold">{{ Auth::user()->name }}</span> <i class="fa fa-cogs"></i>
 						</div>
@@ -115,17 +117,24 @@
 					<ul class="dropdown-menu profile-dropdown" role="menu">
 						@if (Auth::guest())
 							<li>
-								<a href="/auth/login" target="_self"><i class="pg-settings_small"></i> Login</a>
+								<a href="{{ route('login') }}" target="_self"><i class="pg-settings_small"></i> Login</a>
 							</li>
 							<li>
-								<a href="/auth/register" target="_self"><i class="pg-outdent"></i> Register</a>
+								<a href="{{ route('register') }}" target="_self"><i class="pg-outdent"></i> Register</a>
 							</li>
 						@else
 							<li class="bg-master-lighter" style="margin-top: 0px;">
-								<a href="/auth/logout" target="_self" class="clearfix">
+								<a href="{{ route('logout') }}"
+								   class="clearfix"
+								   onclick="event.preventDefault();
+								   document.getElementById('logout-form').submit();">
 									<span class="pull-left">Logout</span>
 									<span class="pull-right"><i class="pg-power"></i></span>
 								</a>
+
+								<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+									{{ csrf_field() }}
+								</form>
 							</li>
 						@endif
 					</ul>
@@ -139,7 +148,7 @@
 		<div class="content">
 			<jumbotron breadcrumbs="breadCrumbs"></jumbotron>
 
-			<div class="full-height full-width" ui-view ></div>
+			<div class="full-height full-width" ui-view></div>
 		</div>
 
 
@@ -165,7 +174,7 @@
 				var deferred = $q.defer();
 
 				// GET api cfg token from auth subdomain and use it in future requests.
-				$http.get('/cfg').success(function(resp){
+				$http.get('/cfg').success(function (resp) {
 					deferred.resolve(resp);
 				});
 
@@ -179,6 +188,6 @@
 	{{--var BACKEND_CFG = {!! App\Services\ViewHelpers::getBackendCfg() !!};--}}
 </script>
 
-	<div ng-include="'/vendor/cms/app/directives/partials/photoswipe-template.html'"></div>
+<div ng-include="'/vendor/cms/app/directives/partials/photoswipe-template.html'"></div>
 </body>
 </html>
