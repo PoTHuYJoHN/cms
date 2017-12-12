@@ -22,6 +22,7 @@ class ConfigController extends ApiController
 			'langs' => config('langs'),
 			'pages' => config('pages'),
 			'storage_url'  => env('STORAGE_URL'),
+			'user' => auth()->user()
 		]);
 	}
 }
